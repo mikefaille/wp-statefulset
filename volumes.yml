@@ -8,10 +8,9 @@ spec:
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Recycle
-  nfs:
-    path: /opt/data/vol/0
-    server: 10.245.1.2
-
+  gcePersistentDisk:
+    pdName: my-data-disk
+    fsType: ext4
 ---
 
 kind: PersistentVolumeClaim
@@ -37,9 +36,9 @@ spec:
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Recycle
-  nfs:
-    path: /opt/data/vol/1
-    server: 10.245.1.2
+  gcePersistentDisk:
+    pdName: my-data-disk2
+    fsType: ext4
 
 ---
 
@@ -66,9 +65,9 @@ spec:
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Recycle
-  nfs:
-    path: /opt/data/vol/2
-    server: 10.245.1.2
+  gcePersistentDisk:
+    pdName: my-data-disk3
+    fsType: ext4
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
